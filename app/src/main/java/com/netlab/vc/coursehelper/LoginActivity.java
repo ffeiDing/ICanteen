@@ -386,16 +386,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     parameters = WebConnection.connect(Constants.baseUrl+Constants.AddUrls.get("INFO"),
                             arrayList,WebConnection.CONNECT_GET);
                     UserInfo userInfo=new Gson().fromJson(parameters.value,UserInfo.class);
-                    if(userInfo.getSuccess()){
-                        Constants.realname=userInfo.getRealName();
-                        Constants.phone=userInfo.getPhone();
-                        Constants.email=userInfo.getEmail();
-                        Constants.type=userInfo.getType();
-                        Constants.username=userInfo.getName();
-                        Constants.admin=userInfo.isAdmin();
-                        Constants.groupStage=userInfo.getGroupStage();
+                   // if(userInfo.getSuccess()){
+                        //Constants.realname=userInfo.getRealName();
+                        //Constants.phone=userInfo.getPhone();
+                        //Constants.email=userInfo.getEmail();
+                        //Constants.type=userInfo.getType();
+                        //Constants.username=userInfo.getName();
+                        //Constants.admin=userInfo.isAdmin();
+                        //Constants.groupStage=userInfo.getGroupStage();
                         //Constants.avatars=userInfo.getAvatars();
-                    }
+                    //}
 
                     /*
                     Constants.username=loginResult.getName();
