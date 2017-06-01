@@ -19,7 +19,7 @@ public class Constants {
             put("COURSE_INFO","/course/info");
             put("QUIZ_LIST","/quiz/list");
             put("QUIZ_CONTENT","/quiz/content");
-            put("INFO","/user/info");
+            put("INFO","/user/info.php");
             put("QUIZ_SUBMIT","/answer/submit");
             put("ELECTIVE_COURSE", "/course/all");
             put("COURSE_SELECT", "/user/attend");

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/load_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:indeterminateDrawable="@anim/loading_progressbar"/>
+
+            <LinearLayout
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
+
+                <LinearLayout
+                    android:id="@+id/announcement_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/announcement" />
+
+                    <TextView
+                        android:id="@+id/announcement_list_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/announcement_list"
+                        android:gravity="center_vertical"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
+
+                <LinearLayout
+                    android:id="@+id/test_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/test" />
+
+                    <TextView
+                        android:id="@+id/test_list_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/test_list"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
+
+                <LinearLayout
+                    android:id="@+id/content_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/content" />
+
+                    <TextView
+                        android:id="@+id/content_list_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/content_list"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
+
+                <LinearLayout
+                    android:id="@+id/forum_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/forum" />
+
+                    <TextView
+                        android:id="@+id/forum_list_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/forum_list"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
+
+                <LinearLayout
+                    android:id="@+id/group_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="45dp"
+                        android:src="@drawable/group" />
+
+                    <TextView
+                        android:id="@+id/group_list_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/group_list"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/text_gray" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -193,21 +193,23 @@ public class RegisterActivity extends AppCompatActivity {
                 ArrayList<Parameters> arrayList = new ArrayList<Parameters>();
                 arrayList.add(new Parameters("name",mUsername));
                 arrayList.add(new Parameters("password",mPassword));
-                //arrayList.add(new Parameters("realName",mRealName));
-                //arrayList.add(new Parameters("phone",mPhoneNumber));
-                //arrayList.add(new Parameters("email",mEmail));
+                arrayList.add(new Parameters("realName",mRealName));
+                arrayList.add(new Parameters("phone",mPhoneNumber));
+                arrayList.add(new Parameters("email",mEmail));
                 Parameters parameters = WebConnection.connect(Constants.baseUrl+Constants.AddUrls.get("REGISTER"),
                         arrayList,WebConnection.CONNECT_POST);
+                Log.e(parameters.name,parameters.value);
                 LoginResult loginResult = new Gson().fromJson(parameters.value,LoginResult.class);
                 if(loginResult.getSuccess()) {
                     Constants.password = mPassword;
                     Constants._id = loginResult.get_id();
                     Constants.token = loginResult.getToken();
                     arrayList = new ArrayList<Parameters>();
-                    arrayList.add(new Parameters("_id",Constants._id));
+                    arrayList.add(new Parameters("name",Constants.username));
                     parameters = WebConnection.connect(Constants.baseUrl+Constants.AddUrls.get("INFO"),
                             arrayList,WebConnection.CONNECT_GET);
                     UserInfo userInfo=new Gson().fromJson(parameters.value,UserInfo.class);
+                    Log.e(parameters.name,parameters.value);
                     if(userInfo.getSuccess()){
                         Constants.realname=userInfo.getRealName();
                         Constants.phone=userInfo.getPhone();

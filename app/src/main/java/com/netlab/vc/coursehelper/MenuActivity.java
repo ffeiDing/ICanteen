@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +20,11 @@ import android.widget.TextView;
 
 import com.netlab.vc.coursehelper.util.Constants;
 
-public class MainActivity extends AppCompatActivity
+/**
+ * Created by dingfeifei on 2017/6/1.
+ */
+
+public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         RadioGroup.OnCheckedChangeListener,
         ViewPager.OnPageChangeListener{
@@ -62,7 +67,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onResume(){
         super.onResume();
-        //Log.e("realname",Constants.realname);
+        Log.e("realname",Constants.realname);
         drawerRealName.setText(Constants.realname);
         drawerUserId.setText(Constants.username);
     }
@@ -109,7 +114,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_elective) {
-            Intent intent=new Intent(MainActivity.this,ElectiveActivity.class);
+            Intent intent=new Intent(MenuActivity.this,ElectiveActivity.class);
             startActivity(intent);
             return true;
 
@@ -131,12 +136,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-            Intent intent=new Intent(MainActivity.this,IAAALogin.class);
+            Intent intent=new Intent(MenuActivity.this,IAAALogin.class);
             startActivity(intent);
             return true;
 
         }  else if (id == R.id.nav_exit) {
-            MainActivity.this.finish();
+            MenuActivity.this.finish();
             //Intent intent=new Intent(MainActivity.this,LoginActivity.class);
             //startActivity(intent);
             return true;

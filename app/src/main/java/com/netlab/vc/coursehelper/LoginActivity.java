@@ -380,29 +380,30 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 if(loginResult.getSuccess()) {
                     Constants.password = mPassword;
                     Constants._id = loginResult.get_id();
+                    Log.e("ID",Constants._id);
                     Constants.token = loginResult.getToken();
                     arrayList=new ArrayList<>();
-                    arrayList.add(new Parameters("_id",loginResult.get_id()));
+                    arrayList.add(new Parameters("name",loginResult.getName()));
                     parameters = WebConnection.connect(Constants.baseUrl+Constants.AddUrls.get("INFO"),
                             arrayList,WebConnection.CONNECT_GET);
+                    Log.e("23333",parameters.name);
                     UserInfo userInfo=new Gson().fromJson(parameters.value,UserInfo.class);
-                   // if(userInfo.getSuccess()){
-                        //Constants.realname=userInfo.getRealName();
-                        //Constants.phone=userInfo.getPhone();
-                        //Constants.email=userInfo.getEmail();
+                   if(userInfo.getSuccess()){
+                        Constants.realname=userInfo.getRealName();
+                        Constants.phone=userInfo.getPhone();
+                        Constants.email=userInfo.getEmail();
                         //Constants.type=userInfo.getType();
-                        //Constants.username=userInfo.getName();
-                        //Constants.admin=userInfo.isAdmin();
+                        Constants.username=userInfo.getName();
+                        // Constants.admin=userInfo.isAdmin();
                         //Constants.groupStage=userInfo.getGroupStage();
                         //Constants.avatars=userInfo.getAvatars();
-                    //}
+                    }
 
-                    /*
                     Constants.username=loginResult.getName();
                     Constants.realname=loginResult.getRealName();
-                    */
 
                 }
+                //Log.e("result", Integer.toString(Integer.parseInt(parameters.name)));
                 return Integer.parseInt(parameters.name);
 
             } catch (Exception e) {
