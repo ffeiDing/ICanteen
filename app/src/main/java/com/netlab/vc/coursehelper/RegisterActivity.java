@@ -214,9 +214,9 @@ public class RegisterActivity extends AppCompatActivity {
                         Constants.realname=userInfo.getRealName();
                         Constants.phone=userInfo.getPhone();
                         Constants.email=userInfo.getEmail();
-                        Constants.type=userInfo.getType();
+                       //Constants.type=userInfo.getType();
                         Constants.username=userInfo.getName();
-                        Constants.admin=userInfo.isAdmin();
+                        //Constants.admin=userInfo.isAdmin();
                         //Constants.avatars=userInfo.getAvatars();
                     }
                     return true;
@@ -236,7 +236,7 @@ public class RegisterActivity extends AppCompatActivity {
                 //save the password?
                 Editor.putString(getApplicationContext(),"password",mPassword);
                 Editor.putString(getApplicationContext(),"username",mUsername);
-                Intent jumpToMain = new Intent(RegisterActivity.this,MainActivity.class);
+                Intent jumpToMain = new Intent(RegisterActivity.this,MenuActivity.class);
                 RegisterActivity.this.startActivity(jumpToMain);
                 RegisterActivity.this.finish();
             } else {
