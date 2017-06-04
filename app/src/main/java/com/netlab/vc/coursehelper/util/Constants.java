@@ -16,6 +16,11 @@ public class Constants {
             put("LOGIN", "/user/login.php");
             put("REGISTER", "/user/register.php");
             put("FOOD_INFO","/food/info.php");
+            put("FOOD_COMMENTS","/food/comments.php");
+
+
+
+
             put("COURSE_LIST","/user/courses");
             put("COURSE_INFO","/course/info");
             put("QUIZ_LIST","/quiz/list");

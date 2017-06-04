@@ -61,6 +61,10 @@
             android:label="ICanteen">
         </activity>
         <activity
+            android:name=".DetailActivity"
+            android:label="评论">
+        </activity>
+        <activity
             android:name=".TestListActivity"
             android:label="测试列表">
         </activity>
