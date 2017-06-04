@@ -53,6 +53,10 @@
             android:label="ICanteen">
         </activity>
         <activity
+            android:name=".DisplayActivity"
+            android:label="ICanteen">
+        </activity>
+        <activity
             android:name=".TestListActivity"
             android:label="测试列表">
         </activity>

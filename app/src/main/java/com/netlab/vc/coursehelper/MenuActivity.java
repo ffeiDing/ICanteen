@@ -1,5 +1,6 @@
 package com.netlab.vc.coursehelper;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -51,7 +52,7 @@ public class MenuActivity extends AppCompatActivity{
     private void setListeners() {
         displayList.setOnClickListener(new LinearLayout.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, AnnouncementActivity.class);
+                Intent intent = new Intent(MenuActivity.this, DisplayActivity.class);
                 startActivity(intent);
             }
         });

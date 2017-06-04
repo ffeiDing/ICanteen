@@ -204,12 +204,13 @@ public class RegisterActivity extends AppCompatActivity {
                     Constants.password = mPassword;
                     Constants._id = loginResult.get_id();
                     Constants.token = loginResult.getToken();
+                    Constants.username = loginResult.getName();
                     arrayList = new ArrayList<Parameters>();
                     arrayList.add(new Parameters("name",Constants.username));
                     parameters = WebConnection.connect(Constants.baseUrl+Constants.AddUrls.get("INFO"),
                             arrayList,WebConnection.CONNECT_GET);
                     UserInfo userInfo=new Gson().fromJson(parameters.value,UserInfo.class);
-                    Log.e(parameters.name,parameters.value);
+                    Log.e("23333",parameters.value);
                     if(userInfo.getSuccess()){
                         Constants.realname=userInfo.getRealName();
                         Constants.phone=userInfo.getPhone();
