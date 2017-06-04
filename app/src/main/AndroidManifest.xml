@@ -50,7 +50,7 @@
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="主菜单">
+            android:label="ICanteen">
         </activity>
         <activity
             android:name=".TestListActivity"
