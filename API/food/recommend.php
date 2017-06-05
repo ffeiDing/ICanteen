@@ -121,7 +121,7 @@ for ($i = 1; $i < $n; $i++)
 		$cho[$i][$j] = false;
 
 		if ($j >= $food[$i][1]) {
-			if ($dym[$i][$j] <= $dym[$i - 1][$j - $food[$i][1]] + $food[$i][2]) {
+			if ($dym[$i][$j] < $dym[$i - 1][$j - $food[$i][1]] + $food[$i][2]) {
 				$dym[$i][$j] = $dym[$i - 1][$j - $food[$i][1]] + $food[$i][2];
 				$cho[$i][$j] = true;
 			}
