@@ -1,8 +1,8 @@
 <?php
 /*
-### Update Info
+### Update password
 
-* API: /user/info.php
+* API: /user/chpw.php
 * HTTP Method: POST
 * Parameters:
 	* _id: Integer
@@ -21,7 +21,7 @@
 require "/home/appserver/firebase/vendor/autoload.php";
 use \Firebase\JWT\JWT;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$servername = "127.0.0.1";
 	$username = "root";
 	$password = "123456";
@@ -37,11 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	// Read input
 	$name = $_POST["name"];
+	$_id = (int)$_POST["_id"];
 	$old_passwd = $_POST["old_password"];
 	// Check name and passwd
-	$sql = "SELECT * FROM userInfo WHERE name = '$name' AND password = '$old_passwd'";
+	$conn -> query("SET CHARACTER SET 'utf8'");
+	$conn -> query("SET NAMES 'utf8'");
+	$sql = "SELECT * FROM user WHERE name = '$name' AND password = '$old_passwd'";
 	$result = $conn -> query($sql);
-	if ($result -> num_rows == 0) {
+	if ($result -> num_rows === 0) {
 		// Wrong Name or Password
 		header($_SERVER["SERVER_PROTOCOL"] . " 422 Wrong Password");
 		exit(1);
@@ -49,20 +52,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	// Check token
 	$payload = array();
-	$payload["_id"] = (int)$_POST["_id"];
-	$payload["name"] = $_POST["name"];
+	$payload["_id"] = (int)$_id;
+	$payload["name"] = $name;
 	$token = JWT::encode($payload, "ILoveYou");
 
-	if ($_POST["token"] != $token) {
+	if ($_POST["token"] !== $token) {
 		header($_SERVER["SERVER_PROTOCOL"] . " 401 Not Login");
 		exit(1);
 	}
 
 	// Updata info
 	$new_passwd = $_POST["new_password"];
-	$sql = "UPDATE userInfo SET password = '$new_passwd' WHERE name = '$name'";
+	$sql = "UPDATE user SET password = '$new_passwd' WHERE name = '$name'";
 	$conn -> query($sql);
 
 	http_response_code(200);
+
+	$conn -> close();
 }
 ?>

@@ -1,8 +1,8 @@
 <?php
 /*
-### Register
+### Login
 
-* API: /user/register.php
+* API: /user/login.php
 * HTTP Method: POST
 * Parameters:
 	* name: username (String)
@@ -10,12 +10,13 @@
 
 * 400 Bad Request: Happen when the request is from GET.
 
-* 422 Duplicate Name
+* 422 Wrong Name or Password
 
 * 200 OK: Return JSON, including:
   	* _id: need sending everytime
   	* name: need sending everytime 
   	* token: need sending everytime
+  	* success: true
 */
 require "/home/appserver/firebase/vendor/autoload.php";
 use \Firebase\JWT\JWT;
@@ -50,16 +51,17 @@ $passwd = $_POST["password"];
 
 $response = array();
 
-// insert and check
-$sql = "INSERT INTO userInfo (name, password) VALUES ('$name', '$passwd')";
-
-if ($conn -> query($sql) === FALSE) {
-	// Duplicate Name
-	header($_SERVER["SERVER_PROTOCOL"] . " 422 Duplicate Name");
+// check name and passwd
+$conn -> query("SET CHARACTER SET 'utf8'");
+$sql = "SELECT * FROM user WHERE name = '$name' AND password = '$passwd'";
+$result = $conn -> query($sql);
+if ($result -> num_rows === 0) {
+	// Wrong Name or Password
+	header($_SERVER["SERVER_PROTOCOL"] . " 422 Wrong Name or Password");
 	exit(1);
 }
 
-// successful insert
+// successful login
 $payload = array();
 $payload["_id"] = time();
 $payload["name"] = $name;
@@ -70,6 +72,7 @@ header("Content-type: application/json");
 $response["_id"] = $payload["_id"];
 $response["name"] = $payload["name"];
 $response["token"] = $token;
+$response["success"] = true;
 echo json_encode($response);
 
 
