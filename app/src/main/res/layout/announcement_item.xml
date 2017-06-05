@@ -19,36 +19,41 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/announcement_listitem_title"
-            android:textSize="12sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="5dp"
-            android:layout_width="fill_parent"
+        <RelativeLayout
+            android:id="@+id/signup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#636363"
-            />
-
+            android:orientation="horizontal"
+            >
 
         <TextView
             android:id="@+id/announcement_listitem_text"
             android:textSize="14sp"
             android:lineSpacingExtra="5sp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="7dp"
-            android:layout_width="fill_parent"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="false"
             />
+            <RatingBar
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:numStars="5"
+                android:rating = "3.75"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:id="@+id/ratingBar"
+                android:isIndicator="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/pkured"
+                android:layout_alignTop="@+id/announcement_listitem_text"
+                android:visibility="invisible"/>
 
-        <RelativeLayout
+
+        </RelativeLayout>
+            <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -63,6 +68,7 @@
             >
 
         </RelativeLayout>
+
 
 
         <RelativeLayout
@@ -87,7 +93,7 @@
                 android:layout_centerVertical="true"
                 android:textSize="12sp"
                 android:layout_toLeftOf="@+id/hole_listitem_reply"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="15dp"
                 android:id="@+id/taste"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

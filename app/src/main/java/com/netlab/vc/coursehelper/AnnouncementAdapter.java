@@ -48,10 +48,10 @@ public class AnnouncementAdapter extends BaseAdapter implements ListAdapter {
         if(view==null){
             view=viewInflater.inflate(layout,parent,false);
         }
-        TextView announcementNameView=(TextView)view.findViewById(R.id.announcement_listitem_title);
+        //TextView announcementNameView=(TextView)view.findViewById(R.id.announcement_listitem_title);
         TextView announcementContentView=(TextView)view.findViewById(R.id.announcement_listitem_text);
         TextView announcementTimeView=(TextView)view.findViewById(R.id.announcement_listitem_time);
-        announcementNameView.setText(announcementList[position].getTitle());
+       // announcementNameView.setText(announcementList[position].getTitle());
         announcementContentView.setText(announcementList[position].getContent());
         announcementTimeView.setText(DateFormatter.format(announcementList[position].getCreate_at()));
         return view;

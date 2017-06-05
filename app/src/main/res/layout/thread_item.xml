@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="user_name"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/bg_black"
             android:textSize="15sp"
             android:layout_weight="7"/>
@@ -33,12 +34,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="10dp"
         android:textColor="@color/bg_black"
         android:text="thread_content"
         />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="5dp">
@@ -57,26 +60,39 @@
             android:textSize="15sp"
             android:textColor="@color/bg_black"
             android:text=""
+            android:paddingLeft="10dp"
             android:layout_weight="2"/>
 
-        <ImageView
+        <RelativeLayout
+            android:id="@+id/signup"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="20dp">
+
+        <RatingBar
+            android:numStars="5"
+            android:rating = "3.75"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:id="@+id/ratingBar"
+            android:isIndicator="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/ic_thumb_up_black_24dp_2"
-            android:id="@+id/like_button"
-            android:layout_weight="1"/>
+            android:layout_marginLeft="10dp"
+            android:progressTint="@color/pkured"
+            android:layout_weight="2" />
 
         <TextView
             android:id="@+id/post_time"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textColor="@color/bg_black"
-            android:layout_alignParentRight="true"
             android:textSize="15sp"
-            android:layout_weight="0.5"/>
+            android:layout_weight="2"
+            android:paddingRight="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true" />
+        </RelativeLayout>
     </LinearLayout>
-
-
 
 
 </LinearLayout>
