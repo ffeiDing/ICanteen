@@ -424,7 +424,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 Editor.putString(getApplicationContext(),"password",mPassword);
                 Editor.putString(getApplicationContext(),"username",mUsername);
-                Intent jumpToMain = new Intent(LoginActivity.this,MenuActivity.class);
+                Intent jumpToMain = new Intent(LoginActivity.this,DisplayActivity.class);
                 LoginActivity.this.startActivity(jumpToMain);
             } else if(success.equals(-1)){
                 Toast.makeText(getApplicationContext(), "网络错误!", Toast.LENGTH_LONG).show();

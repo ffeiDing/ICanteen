@@ -84,6 +84,9 @@
             android:name=".AnnouncementActivity"
             android:label="通知">
         </activity>
+        <activity
+            android:name=".RecommendActivity"
+            android:label="推荐菜单" />
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

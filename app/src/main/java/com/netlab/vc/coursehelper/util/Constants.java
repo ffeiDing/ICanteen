@@ -17,7 +17,7 @@ public class Constants {
             put("REGISTER", "/user/register.php");
             put("FOOD_INFO","/food/info.php");
             put("FOOD_COMMENTS","/food/comments.php");
-
+            put("FOOD_REC","/food/recommend.php");
 
 
 
